@@ -26,15 +26,15 @@ Eddie
 <div align="center">
 <h3 align="center">Pneumonia Detection from X-Ray Images</h3>
 </div>
-<p>
+<p align='center'>
 This project aims to train a model to be able to accurately detect pneumonia from grayscale xray images. Pneumonia is still a large issue as there is still an average of 225 deaths in eldery people and 77 deaths in young children per 100,000 people.
-
+<p align='center'>
 <img src='images/pneumonia_death.png' width='600'>
-
+</p>
 This graph shows that the mortality rate of children is high predominately in third world countries.
-
+<p align='center'>
 <img src='images/pneumonia_child.png' width='600'>
-
+</p>
 We want to focus on having a high recall score since we believe falsely diagnosing someone as normal when they have pneumonia is far worse than diagnosing someone as having pneumonia when they are normal.
 
 Since there was a large class imbalance (4273 Pneumonia xrays vs 1583 Normal xrays), there were some steps that were taken in order to improve the learning of the network. The main step was to introduce data augmentation, which slightly altered random images each epoch so the network was essentially training on new data. An example of what the alteration might have looked like is shown below.
