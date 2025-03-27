@@ -1,7 +1,7 @@
 <!-- PROJECT SHIELDS -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Activity][activity-shield]][activity-url]
+<!--[![Contributors][contributors-shield]][contributors-url] >
+<!--[![Activity][activity-shield]][activity-url] >
 <!-- [![Stargazers][stars-shield]][stars-url] -->
 Eddie 
  
@@ -46,8 +46,9 @@ Since there was a large class imbalance (4273 Pneumonia xrays vs 1583 Normal xra
 </p>
 
 ## Data
-The data comes from Kaggle and is made up of X-Ray images that belong to two classes: Pneumonia and Normal. 
+The data comes from Kaggle and is made up of X-Ray images that belong to two classes: Pneumonia and Normal. There is also a much larger dataset with more than two classes that may be used for testing after Kaggle data.
 * [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) 
+* [Mendeley Data](https://data.mendeley.com/datasets/rscbjbr9sj/3)
 
 ## Results
 
@@ -63,17 +64,22 @@ The data comes from Kaggle and is made up of X-Ray images that belong to two cla
 ### This neural network used VGG16 which is a pretrained CNN with tuned weights. The dense layers had to be removed and added manually as to adapt it to this use case. The model performed quite well with the train accuracy and validation accuracy being very inline with one another. This meant that the overfitting was no longer a problem.
 <img src='images/vgg.png' width='800'>
 
+### This neural network used ResNet which is deeper than Vgg16. This model actually ended up performing worse both in train and validation accuracy even though it was deeper than VGG. It may be the nature of the images don't work well with ResNet.
+<img src='images/resnet.png' width='800'>
 
+### This neural network used EfficientNet which aims to be less computationally intensive compared to the other networks while still having high accuracy. In our case, it ended up being the best performing model. It had the second highest accuracy score, losing only by 1% to VGG16 but the highest Recall with a score of 96%.
+<img src='images/efficientnet.png' width='800'>
 
 
 
 ## Conclusions
-* **The model that implemented VGG16 was the best performing one** VGG16 ended up with the least amount of overfitting and generally high accuracy. It also had a high recall score which is what we are aiming for.
+* **The model that implemented EfficientNet was the best performing one** EfficientNet had the interesting behavior of having higher validation accuracy than the training accuracy. This is likely due to the dropout layers that lowered the accuracy of the training run. It also had a high recall score which is what we are aiming for.
 
 
 ## Next Steps
 Further steps
-* Implement Grad-CAM to improve visualization
+* Implement Grad-CAM, which maps where in the image the model determined to be important in deciding the class. The heatmap can then be overlayed on the original x-ray for better visualization.
+* Run the model on a much larger dataset housed on Mendeley Data which is around 4 times the size of the Kaggle dataset. 
 
 <!-- https://home.aveek.io/GitHub-Profile-Badges/ -->
 
