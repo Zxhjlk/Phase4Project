@@ -65,10 +65,10 @@ The data comes from Kaggle and is made up of X-Ray images that belong to two cla
 <img src='images/vgg.png' width='800'>
 
 ### This neural network used ResNet which is deeper than Vgg16. This model actually ended up performing worse both in train and validation accuracy even though it was deeper than VGG. It may be the nature of the images don't work well with ResNet.
-<img src='images/resnet.png' width='800'>
+<img src='images/resnet.PNG' width='800'>
 
 ### This neural network used EfficientNet which aims to be less computationally intensive compared to the other networks while still having high accuracy. In our case, it ended up being the best performing model. It had the second highest accuracy score, losing only by 1% to VGG16 but the highest Recall with a score of 96%.
-<img src='images/efficientnet.png' width='800'>
+<img src='images/efficientnet.PNG' width='800'>
 
 
 
